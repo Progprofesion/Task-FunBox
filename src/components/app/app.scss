@@ -4,7 +4,6 @@
 .app {
     background: url(../../assets/img/bgMain.svg);
     margin: 0 auto;
-    height: 100vh;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -12,4 +11,17 @@
 .container {  
     margin: 0 auto;
     max-width: 1120px;
+}
+
+
+@media (max-width: 1224px) {
+    .container {
+      width: 96%;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+      width: 100%;
+    }
 }

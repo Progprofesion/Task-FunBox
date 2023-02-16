@@ -13,6 +13,8 @@ const MainLayout = () => {
                 'portions': '10 порций',
                 'descr': 'мышь в подарок',
                 "weight": '0,5',
+                "buyDescr": "чего сидишь? Порадуй котэ,",
+                "hoverText": "Котэ не одобряет?"
             },
             {
                 "id": 2,
@@ -22,6 +24,7 @@ const MainLayout = () => {
                 'portions': '40 порций',
                 'descr': '2 мыши в подарок',
                 "weight": 2,
+                "hoverText": "Котэ не одобряет?"
             },
             {
                 "id": 3,
@@ -31,18 +34,20 @@ const MainLayout = () => {
                 'portions': '100 порций',
                 'descr': '5 мышей в подaрок заказчик доволен',
                 "weight": ' 5',
+                "hoverText": "Котэ не одобряет?"
             }
         ]
     }
 
     const render = (data) => {
         return (
-            data.cards.map(({ id, title, subtitle, composite, portions, descr, weight }) => {
+            data.cards.map(({ id, title, subtitle, hoverText, composite, portions, descr, weight }) => {
                 return <MainItem
                     key={id}
                     id={id}
                     title={title}
                     subtitle={subtitle}
+                    hoverText={hoverText}
                     composite={composite}
                     portions={portions}
                     descr={descr}
