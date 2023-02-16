@@ -1,8 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/trebuchet-ms-2');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
 
 .app {
     background: url(../../assets/img/bgMain.svg);
     margin: 0 auto;
     height: 100vh;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .container {  
