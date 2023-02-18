@@ -13,12 +13,13 @@ const MainLayout = () => {
                 'portions': '10 порций',
                 'descr': 'мышь в подарок',
                 "weight": '0,5',
-                "buyDescr": "чего сидишь? Порадуй котэ,",
+                "buyDescr": "Чего сидишь? Порадуй котэ,",
                 "hoverText": "Котэ не одобряет?",
-                "descrDish": "Чего сидишь? Порадуй котэ",
-                "activeDish": "Печень утки разварная с артишоками.",
+                "descrTaste": "Чего сидишь? Порадуй котэ",
+                "activeTaste": "Печень утки разварная с артишоками.",
                 "disabledText": "Печалька, с фуа-гра закончился.",
-                "buy": "купить."
+                "disabledCard": false,
+                "buy": "купи."
             },
             {
                 "id": 2,
@@ -29,10 +30,11 @@ const MainLayout = () => {
                 'descr': '2 мыши в подарок',
                 "weight": 2,
                 "hoverText": "Котэ не одобряет?",
-                "descrDish": "Чего сидишь? Порадуй котэ",
-                "activeDish": "Головы щучьи с чесноком да свежайшая сёмгушка.",
+                "buyDescr": "Чего сидишь? Порадуй котэ,",
+                "activeTaste": "Головы щучьи с чесноком да свежайшая сёмгушка.",
                 "disabledText": "Печалька, с рыбой закончился.",
-                "buy": "купить."
+                "disabledCard": false,
+                "buy": "купи."
             },
             {
                 "id": 3,
@@ -43,27 +45,29 @@ const MainLayout = () => {
                 'descr': '5 мышей в подaрок заказчик доволен',
                 "weight": ' 5',
                 "hoverText": "Котэ не одобряет?",
-                "descrDish": "Чего сидишь? Порадуй котэ",
-                "activeDish": "Филе из цыплят с трюфелями в бульоне.",
+                "buyDescr": "Чего сидишь? Порадуй котэ,",
+                "activeTaste": "Филе из цыплят с трюфелями в бульоне.",
                 "disabledText": "Печалька, с курой закончился.",
-                "buy": "купить."
+                "disabledCard": true,
+                "buy": "купи."
             }
         ]
     }
 
     const render = (data) => {
         return (
-            data.cards.map(({ id, title, subtitle, hoverText, activeDish, descrDish, disabledText, taste, portions, descr, weight, buy }) => {
+            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disabledText, disabledCard, taste, portions, descr, weight, buy }) => {
                 return <MainItem
                     key={id}
                     id={id}
                     title={title}
                     subtitle={subtitle}
                     hoverText={hoverText}
-                    activeDish={activeDish}
-                    descrDish={descrDish}
+                    activeTaste={activeTaste}
+                    buyDescr={buyDescr}
                     taste={taste}
                     disabledText={disabledText}
+                    disabledCard={disabledCard}
                     portions={portions}
                     descr={descr}
                     weight={weight}
