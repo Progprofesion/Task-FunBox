@@ -1,7 +1,7 @@
-import MainItem from './MainItem';
-import './main.scss';
+import CardsItem from '../cardsItem/CardsItem';
+import './cards.scss';
 
-const MainLayout = () => {
+const Cards = () => {
 
     const data = {
         'cards': [
@@ -17,7 +17,7 @@ const MainLayout = () => {
                 "hoverText": "Котэ не одобряет?",
                 "descrTaste": "Чего сидишь? Порадуй котэ",
                 "activeTaste": "Печень утки разварная с артишоками.",
-                "disabledText": "Печалька, с фуа-гра закончился.",
+                "disBuyDescr": "Печалька, с фуа-гра закончился.",
                 "disabledCard": false,
                 "buy": "купи."
             },
@@ -32,7 +32,7 @@ const MainLayout = () => {
                 "hoverText": "Котэ не одобряет?",
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
                 "activeTaste": "Головы щучьи с чесноком да свежайшая сёмгушка.",
-                "disabledText": "Печалька, с рыбой закончился.",
+                "disBuyDescr": "Печалька, с рыбой закончился.",
                 "disabledCard": false,
                 "buy": "купи."
             },
@@ -47,7 +47,7 @@ const MainLayout = () => {
                 "hoverText": "Котэ не одобряет?",
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
                 "activeTaste": "Филе из цыплят с трюфелями в бульоне.",
-                "disabledText": "Печалька, с курой закончился.",
+                "disBuyDescr": "Печалька, с курой закончился.",
                 "disabledCard": true,
                 "buy": "купи."
             }
@@ -56,8 +56,8 @@ const MainLayout = () => {
 
     const render = (data) => {
         return (
-            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disabledText, disabledCard, taste, portions, descr, weight, buy }) => {
-                return <MainItem
+            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, descr, weight, buy }) => {
+                return <CardsItem
                     key={id}
                     id={id}
                     title={title}
@@ -66,7 +66,7 @@ const MainLayout = () => {
                     activeTaste={activeTaste}
                     buyDescr={buyDescr}
                     taste={taste}
-                    disabledText={disabledText}
+                    disBuyDescr={disBuyDescr}
                     disabledCard={disabledCard}
                     portions={portions}
                     descr={descr}
@@ -90,4 +90,4 @@ const MainLayout = () => {
     )
 }
 
-export default MainLayout
+export default Cards

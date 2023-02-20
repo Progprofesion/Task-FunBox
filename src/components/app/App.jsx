@@ -1,19 +1,17 @@
-import Main from '../main/Main';
+import Cards from '../cards/Cards';
 
 import './app.scss';
 
 const App = () => {
 
-
-
     return (
-        <main className='app'>
+        <section className='app'>
             <div className="shadow">
                 <div className="container">
-                    <Main />
+                    <Cards />
                 </div>
             </div>
-        </main>
+        </section>
     )
 }
 

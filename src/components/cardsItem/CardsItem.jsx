@@ -1,39 +1,25 @@
 import { useState } from 'react';
 
+import useToggles from 'src/hooks/useToggles';
 import cat from 'src/assets/img/cat.svg';
-import './mainItem.scss';
+import './cardsItem.scss';
 
-const MainItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disabledText, disabledCard, taste, portions, descr, weight, buy }) => {
+const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, descr, weight, buy }) => {
 
+    //  Переключения стиля карточек
     const [active, setActive] = useState(false);
     const [hover, setHover] = useState(false);
 
-    const activeTogle = (e) => {
-        if (active) {
-            setActive(false);
-            e.preventDefault();
-            setHover(false)
-        } else {
-            setActive(true);
-            e.preventDefault();
-        }
-    }
+    const { activeTogle, activeHover } = useToggles(active, setActive, setHover);
 
-    const activeHover = () => {
-        if (active) {
-            setHover(true)
-        } else {
-            setHover(false)
-        }
-    }
 
     return (
         <div className="mainItem" onMouseLeave={() => activeHover(true)}>
             <div className={
+                //  Переключения стиля карточек
                 active ? "active mainItem__wrapp" : "mainItem__wrapp" &&
                     disabledCard ? "disabledWrapp mainItem__wrapp" : "mainItem__wrapp"
-            } onClick={(e) =>
-                activeTogle(e, true)}>
+            } onClick={(e) => activeTogle(e, true)}>
                 <div className={
                     active ? "activeCorner  mainItem__corner" : "mainItem__corner" &&
                         disabledCard ? "disabledCorner mainItem__corner" : "mainItem__corner"}></div>
@@ -53,7 +39,7 @@ const MainItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disab
             </div>
             <p className={disabledCard ? "disabledBuyDescr mainItem__buyDescr" : "mainItem__buyDescr"}>{
                 active ? activeTaste : buyDescr &&
-                    disabledCard ? disabledText : buyDescr
+                    disabledCard ? disBuyDescr : buyDescr
             } <a onClick={(e) => activeTogle(e, true)} href="!#">  {
                 active ? null : buy &&
                     disabledCard ? null : buy
@@ -62,6 +48,6 @@ const MainItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disab
     )
 }
 
-export default MainItem
+export default CardsItem
 
 
