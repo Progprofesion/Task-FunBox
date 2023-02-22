@@ -1,10 +1,11 @@
-.main {
-    display: grid;
-    align-items: center;
+.cards {
+    display: flex;
+    // align-items: center;
+    flex-direction: row;
     min-height: 100vh;
     &__title {
         position: absolute;
-        top: -65px;
+        top: 160px;
         right: 50%;
         font-size: 36px;
         font-weight: inherit;
@@ -15,24 +16,35 @@
     }
     &__wrapper {
         position: relative;
-        margin-top: 75px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 320px);
-        grid-gap: 80px;
-        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        // margin-top: 75px;
+        display: flex;
+        display: -ms-flexbox; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+
     }
 }
 
-@media (max-width: 1224px) {
-    .main {
-        &__wrapper {
-            margin-top: 50px;
-        }
+// Media -------------------
+
+@media (max-width: 1000px) {
+    .cards {
+       &__wrapper {
+        justify-content: space-around;
+        height: 100%;
+       }
     }
 }
+
 
 @media (max-width: 991px) {
-    .main {
+    .cards {
         &__title {
             font-size: 28px;
         }
@@ -41,13 +53,10 @@
 
 
 @media (max-width: 767px) {
-    .main {
+    .cards {
         &__title {
             text-align: center;
             margin-top: -60px;
-        }
-        &__wrapper {
-            margin-top: 150px;
         }
     }
 }

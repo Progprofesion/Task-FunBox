@@ -14,30 +14,30 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
 
 
     return (
-        <div className="mainItem" onMouseLeave={() => activeHover(true)}>
+        <div className="cardsItem" onMouseLeave={() => activeHover(true)}>
             <div className={
                 //  Переключения стиля карточек
-                active ? "active mainItem__wrapp" : "mainItem__wrapp" &&
-                    disabledCard ? "disabledWrapp mainItem__wrapp" : "mainItem__wrapp"
+                active ? "active cardsItem__wrapp" : "cardsItem__wrapp" &&
+                    disabledCard ? "disabledWrapp cardsItem__wrapp" : "cardsItem__wrapp"
             } onClick={(e) => activeTogle(e, true)}>
                 <div className={
-                    active ? "activeCorner  mainItem__corner" : "mainItem__corner" &&
-                        disabledCard ? "disabledCorner mainItem__corner" : "mainItem__corner"}></div>
+                    active ? "activeCorner  cardsItem__corner" : "mainItem__corner" &&
+                        disabledCard ? "disabledCorner cardsItem__corner" : "cardsItem__corner"}></div>
                 <div className={
-                    hover ? "activeHoverText mainItem__subtitle" : "mainItem__subtitle" &&
-                        disabledCard ? "disabledText mainItem__subtitle" : "mainItem__subtitle"}>{hover ? hoverText : subtitle}</div>
-                <h1 className={disabledCard ? "disabledText mainItem__title" : "mainItem__title"}>{title}</h1>
-                <div className={disabledCard ? "disabledText mainItem__taste" : "mainItem__taste"}>{taste}</div>
-                <div className={disabledCard ? "disabledText mainItem__descr" : "mainItem__descr"}>{[portions, <br key={id} />, descr]}</div>
-                <img src={cat} alt="cat" className={disabledCard ? "disabledImg mainItem__img" : "mainItem__img"} />
+                    hover ? "activeHoverText cardsItem__subtitle" : "cardsItem__subtitle" &&
+                        disabledCard ? "disabledText cardsItem__subtitle" : "cardsItem__subtitle"}>{hover ? hoverText : subtitle}</div>
+                <h1 className={disabledCard ? "disabledText cardsItem__title" : "cardsItem__title"}>{title}</h1>
+                <div className={disabledCard ? "disabledText cardsItem__taste" : "cardsItem__taste"}>{taste}</div>
+                <div className={disabledCard ? "disabledText cardsItem__descr" : "cardsItem__descr"}>{[portions, <br key={id} />, descr]}</div>
+                <img src={cat} alt="cat" className={disabledCard ? "disabledImg cardsItem__img" : "cardsItem__img"} />
                 <div className={
-                    active ? "activeRound  mainItem__round" : "mainItem__round" &&
-                        disabledCard ? "disabledRound mainItem__round" : "mainItem__round"}>
+                    active ? "activeRound  cardsItem__round" : "cardsItem__round" &&
+                        disabledCard ? "disabledRound cardsItem__round" : "cardsItem__round"}>
                     <span>{weight}</span>
                     <p>кг</p>
                 </div>
             </div>
-            <p className={disabledCard ? "disabledBuyDescr mainItem__buyDescr" : "mainItem__buyDescr"}>{
+            <p className={disabledCard ? "disabledBuyDescr cardsItem__buyDescr" : "cardsItem__buyDescr"}>{
                 active ? activeTaste : buyDescr &&
                     disabledCard ? disBuyDescr : buyDescr
             } <a onClick={(e) => activeTogle(e, true)} href="!#">  {

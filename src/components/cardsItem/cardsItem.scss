@@ -1,7 +1,7 @@
-.mainItem {
+.cardsItem {
     &__corner {
         position: absolute;
-        border-right: 5px solid #1698D9;
+        border-right: 4px solid #1698D9;
         transform: rotate(45deg);
         height: 150px;
         z-index: 1;
@@ -147,4 +147,16 @@
     opacity: 0.5;
 }
 
+// Media -------------------
+
+@media (max-width: 1000px) {
+    .cardsItem {
+        &__wrapp {
+            margin-top: 40px;
+        }
+       &__buyDescr {
+        margin-bottom: 40px;
+       }
+    }
+}
 

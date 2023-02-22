@@ -80,9 +80,9 @@ const Cards = () => {
     const elements = render(data)
 
     return (
-        <section className="main">
-            <div className="main__wrapper">
-                <h2 className="main__title">Ты сегодня покормил кота?</h2>
+        <section className="cards">
+            <h2 className="cards__title">Ты сегодня покормил кота?</h2>
+            <div className="cards__wrapper">
                 {elements}
             </div>
         </section>
