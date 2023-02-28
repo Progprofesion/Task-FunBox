@@ -24,8 +24,15 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+      }
+}
+
+@media (max-width: 320px) {
     .container {
       width: 100%;
     }
 }
+

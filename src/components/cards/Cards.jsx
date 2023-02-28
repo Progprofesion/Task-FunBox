@@ -81,9 +81,11 @@ const Cards = () => {
 
     return (
         <section className="cards">
-            <h2 className="cards__title">Ты сегодня покормил кота?</h2>
-            <div className="cards__wrapper">
-                {elements}
+            <div className="cards__mainWrapp">
+                <div className="cards__title">Ты сегодня покормил кота?</div>
+                <div className="cards__wrapper">
+                    {elements}
+                </div>
             </div>
         </section>
 
