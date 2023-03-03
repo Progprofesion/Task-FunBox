@@ -1,102 +1,134 @@
 .cardsItem {
-    &__corner {
-        position: absolute;
-        border-right: 4px solid #1698D9;
-        transform: rotate(45deg);
-        height: 150px;
-        z-index: 1;
-        top: -35px;
-    }
-    &__wrapp {
+   &__wrapper {
+        display: flex;
+   }
+   &__wrappCorner {
+        display: flex;
         width: 320px;
-        height: 480px;
+        height: 50px;
+   }
+   &__corner {
+        width: 60px;
+        height: 50px;
+        background: linear-gradient(-45deg, #F2F2F2, #F2F2F2 33px, #1698d9 0, #1698d9 37px, transparent 0);
+   }
+   &__rectangle {
+        width: 100%;
         background: #F2F2F2;
-        border: 4px solid #1698D9;
+        border-top: 4px solid #1698D9;
+        border-right: 4px solid #1698D9;
+        border-top-right-radius: 12px;
+
+        h2 {
+            margin-top: 20px;
+            margin-left: 5px;
+            font-family: 'Trebuchet MS';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #666666;
+        }
+   }
+   &__card {
         position: relative;
+        width: 320px;
+        height: 430px;
+        background: #F2F2F2;
+        border-left: 4px solid #1698D9;
+        border-right: 4px solid #1698D9;
+        border-bottom: 4px solid #1698D9;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
         overflow: hidden;
-        border-radius: 12px;
-        clip-path: polygon(47px 0, 100% 0%, 100% 0, 100% 100%, 0 100%, 0 47px);
-        cursor: pointer;
-    }
-    &__subtitle {  
-        margin-top: 20px;
-        margin-left: 50px;   
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #666666;
-    }
-    &__title {
-        text-align: left;
-        margin-top: 5px;
-        margin-left: 50px;  
+   }
+   &__title {
+        margin-left: 50px;
+        font-family: 'Trebuchet MS';
         font-weight: 700;
         font-size: 48px;
-        line-height: 60px;
+        line-height: 56px;
         color: #000000;
-    }
-    &__taste {
-        margin-left: 50px;   
+   }
+   &__taste {
+        margin-left: 50px;
+        font-family: 'Trebuchet MS';
         font-weight: 700;
         font-size: 24px;
         line-height: 28px;
         color: #000000;
-    }
-    &__descr {
+   }
+   &__portions {
         margin-top: 15px;
-        width: 127px;
         margin-left: 50px;
-        font-weight: 400;
+        font-family: 'Trebuchet MS';
         font-size: 14px;
         line-height: 16px;
         color: #666666;
-    } 
-    &__img {
-        position: absolute;
-        top: 205px;
-        right: -28px;
-    }
-    &__buyDescr {
-        margin-top: 15px;
-        text-align: center;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 15px;
-        color: #FFFFFF;
-        a {
-            border-bottom: 1px dashed;
-            text-decoration: none;
-        }
-    }
-    &__round {
+   }
+   &__descr {
+        margin-left: 50px;
+        font-family: 'Trebuchet MS';
+        font-size: 14px;
+        line-height: 16px;
+        color: #666666;
+   }
+   &__img {
+        margin-top: 35px;
+        margin-left: -25px;
+   }
+   &__round {
         position: absolute;
         width: 80px;
         height: 80px;
-        background: #1698D9;
+        bottom: 15px;
+        right: 15px;
         border-radius: 100%;
-        bottom: 12px;
-        right: 12px;
+        background: #1698D9;
+   }
+   &__weight {
+        margin-top: 20px;
+        text-align: center;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 22px;
         color: #FFFFFF;
-        span {
-            display: block;
-            text-align: center;
-            margin-top: 5px;
-            font-size: 42px;
-        }
-        p {
-            display: block;
-            text-align: center;
-            font-size: 22px;
-            line-height: 15px;
-        }
-    }
-    &__disabled {
-        width: 320px;
-        height: 480px;
-        background: #F2F2F2;
-        opacity: 0.5;
-    }
+   }
+   &__kg {
+        margin-top: 8px;
+        text-align: center;
+        font-family: 'Trebuchet MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 22px;
+        color: #FFFFFF; 
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 
 
@@ -149,11 +181,11 @@
 
 // Media -------------------
 
-@media (max-width: 1000px) {
-    .cardsItem {
-       &__buyDescr {
-        margin-bottom: 40px;
-       }
-    }
-}
+// @media (max-width: 1000px) {
+//     .cardsItem {
+//        &__buyDescr {
+//         margin-bottom: 40px;
+//        }
+//     }
+// }
 

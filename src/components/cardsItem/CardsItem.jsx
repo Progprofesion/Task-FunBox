@@ -14,36 +14,26 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
 
 
     return (
-        <div className="cardsItem" onMouseLeave={() => activeHover(true)}>
-            <div className={
-                //  Переключения стиля карточек
-                active ? "active cardsItem__wrapp" : "cardsItem__wrapp" &&
-                    disabledCard ? "disabledWrapp cardsItem__wrapp" : "cardsItem__wrapp"
-            } onClick={(e) => activeTogle(e, true)}>
-                <div className={
-                    active ? "activeCorner  cardsItem__corner" : "mainItem__corner" &&
-                        disabledCard ? "disabledCorner cardsItem__corner" : "cardsItem__corner"}></div>
-                <div className={
-                    hover ? "activeHoverText cardsItem__subtitle" : "cardsItem__subtitle" &&
-                        disabledCard ? "disabledText cardsItem__subtitle" : "cardsItem__subtitle"}>{hover ? hoverText : subtitle}</div>
-                <h1 className={disabledCard ? "disabledText cardsItem__title" : "cardsItem__title"}>{title}</h1>
-                <div className={disabledCard ? "disabledText cardsItem__taste" : "cardsItem__taste"}>{taste}</div>
-                <div className={disabledCard ? "disabledText cardsItem__descr" : "cardsItem__descr"}>{[portions, <br key={id} />, descr]}</div>
-                <img src={cat} alt="cat" className={disabledCard ? "disabledImg cardsItem__img" : "cardsItem__img"} />
-                <div className={
-                    active ? "activeRound  cardsItem__round" : "cardsItem__round" &&
-                        disabledCard ? "disabledRound cardsItem__round" : "cardsItem__round"}>
-                    <span>{weight}</span>
-                    <p>кг</p>
+        <div className="cardsItem">
+            <div className="cardsItem__wrapp">
+                <div className="cardsItem__wrappCorner">
+                    <div className="cardsItem__corner"></div>
+                    <div className="cardsItem__rectangle"> <h2>Сказочное заморское яство</h2></div>
+                </div>
+                <div className="cardsItem__wrappCards">
+                    <div className="cardsItem__card">
+                        <h3 className="cardsItem__title">{title}</h3>
+                        <p className="cardsItem__taste">{taste}</p>
+                        <p className="cardsItem__portions">{portions}</p>
+                        <p className="cardsItem__descr">{descr}</p>
+                        <img src={cat} alt="" className="cardsItem__img" />
+                        <div className="cardsItem__round">
+                            <div className="cardsItem__weight">{weight}</div>
+                            <div className="cardsItem__kg">кг</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p className={disabledCard ? "disabledBuyDescr cardsItem__buyDescr" : "cardsItem__buyDescr"}>{
-                active ? activeTaste : buyDescr &&
-                    disabledCard ? disBuyDescr : buyDescr
-            } <a onClick={(e) => activeTogle(e, true)} href="!#">  {
-                active ? null : buy &&
-                    disabledCard ? null : buy
-            }</a></p>
         </div>
     )
 }

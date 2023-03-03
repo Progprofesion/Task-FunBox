@@ -82,7 +82,7 @@ const Cards = () => {
     return (
         <section className="cards">
             <div className="cards__mainWrapp">
-                <div className="cards__title">Ты сегодня покормил кота?</div>
+                <h1 className="cards__title">Ты сегодня покормил кота?</h1>
                 <div className="cards__wrapper">
                     {elements}
                 </div>
