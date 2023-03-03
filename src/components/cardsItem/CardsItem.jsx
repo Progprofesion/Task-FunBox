@@ -4,7 +4,7 @@ import useToggles from 'src/hooks/useToggles';
 import cat from 'src/assets/img/cat.svg';
 import './cardsItem.scss';
 
-const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, descr, weight, buy }) => {
+const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, weight, buy }) => {
 
     //  Переключения стиля карточек
     const [active, setActive] = useState(false);
@@ -24,14 +24,24 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                     <div className="cardsItem__card">
                         <h3 className="cardsItem__title">{title}</h3>
                         <p className="cardsItem__taste">{taste}</p>
-                        <p className="cardsItem__portions">{portions}</p>
-                        <p className="cardsItem__descr">{descr}</p>
+                        <div className="cardsItem__portionsWrapp">
+                            <p className="cardsItem__portions">{portions}</p> &nbsp;
+                            <p className="cardsItem__portionsDescr">{portionsDescr}</p>
+                        </div>
+                        <div className="cardsItem__giftWrapp">
+                            <p className="cardsItem__gift">{gift !== '' ? gift : null}</p> &nbsp;
+                            <p className="cardsItem__giftDescr">{giftDescr}</p>
+                        </div>
                         <img src={cat} alt="" className="cardsItem__img" />
                         <div className="cardsItem__round">
                             <div className="cardsItem__weight">{weight}</div>
                             <div className="cardsItem__kg">кг</div>
                         </div>
                     </div>
+                </div>
+                <div className="cardsItem__wrappBuyDescr">
+                    <p className="cardsItem__buyDescr">{buyDescr}</p> &nbsp;
+                    <a href="!#" className="cardsItem__buy">{buy}</a>
                 </div>
             </div>
         </div>

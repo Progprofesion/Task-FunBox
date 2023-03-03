@@ -10,8 +10,10 @@ const Cards = () => {
                 "title": 'Нямушка',
                 'subtitle': 'Сказочное заморское яство',
                 "taste": 'С фуа-гра',
-                'portions': '10 порций',
-                'descr': 'мышь в подарок',
+                'portions': 10,
+                'portionsDescr': 'порций',
+                'gift': '',
+                'giftDescr': 'мышь в подарок',
                 "weight": '0,5',
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
                 "hoverText": "Котэ не одобряет?",
@@ -26,8 +28,10 @@ const Cards = () => {
                 "title": 'Нямушка',
                 'subtitle': 'Сказочное заморское яство',
                 "taste": 'С рыбой',
-                'portions': '40 порций',
-                'descr': '2 мыши в подарок',
+                'portions': 40,
+                'portionsDescr': 'порций',
+                'gift': 2,
+                'giftDescr': 'мыши в подарок',
                 "weight": 2,
                 "hoverText": "Котэ не одобряет?",
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
@@ -41,9 +45,11 @@ const Cards = () => {
                 "title": 'Нямушка',
                 'subtitle': 'Сказочное заморское яство',
                 "taste": 'С курой',
-                'portions': '100 порций',
-                'descr': '5 мышей в подaрок заказчик доволен',
-                "weight": ' 5',
+                'portions': 100,
+                'portionsDescr': 'порций',
+                'gift': 5,
+                'giftDescr': 'мышей в подaрок заказчик доволен',
+                "weight": 5,
                 "hoverText": "Котэ не одобряет?",
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
                 "activeTaste": "Филе из цыплят с трюфелями в бульоне.",
@@ -56,7 +62,7 @@ const Cards = () => {
 
     const render = (data) => {
         return (
-            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, descr, weight, buy }) => {
+            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, weight, buy }) => {
                 return <CardsItem
                     key={id}
                     id={id}
@@ -69,7 +75,9 @@ const Cards = () => {
                     disBuyDescr={disBuyDescr}
                     disabledCard={disabledCard}
                     portions={portions}
-                    descr={descr}
+                    portionsDescr={portionsDescr}
+                    gift={gift}
+                    giftDescr={giftDescr}
                     weight={weight}
                     buy={buy}
                 />
