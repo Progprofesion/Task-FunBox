@@ -12,7 +12,7 @@ const Cards = () => {
                 "taste": 'С фуа-гра',
                 'portions': 10,
                 'portionsDescr': 'порций',
-                'gift': '',
+                'gift': null,
                 'giftDescr': 'мышь в подарок',
                 "weight": '0,5',
                 "buyDescr": "Чего сидишь? Порадуй котэ,",

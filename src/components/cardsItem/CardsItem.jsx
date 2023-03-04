@@ -29,7 +29,7 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                             <p className="cardsItem__portionsDescr">{portionsDescr}</p>
                         </div>
                         <div className="cardsItem__giftWrapp">
-                            <p className="cardsItem__gift">{gift !== '' ? gift : null}</p> &nbsp;
+                            <p className="cardsItem__gift">{gift !== '' ? gift : ''}</p>
                             <p className="cardsItem__giftDescr">{giftDescr}</p>
                         </div>
                         <img src={cat} alt="" className="cardsItem__img" />

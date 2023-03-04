@@ -73,6 +73,7 @@
    }
    &__giftWrapp {
         display: flex;
+        width: 170px;
         margin-left: 50px;
         font-family: 'Trebuchet MS';
         font-size: 14px;
@@ -80,6 +81,7 @@
         color: #666666;
    }
    &__gift {
+        display: flex;
         font-weight: 700;
    }
    &__giftDescr {
