@@ -4,13 +4,15 @@ import useToggles from 'src/hooks/useToggles';
 import cat from 'src/assets/img/cat.svg';
 import './cardsItem.scss';
 
-const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, weight, buy }) => {
+const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, giftDescrOptions, weight, buy }) => {
 
     //  Переключения стиля карточек
     const [active, setActive] = useState(false);
     const [hover, setHover] = useState(false);
 
     const { activeTogle, activeHover } = useToggles(active, setActive, setHover);
+
+
 
 
     return (
@@ -29,9 +31,13 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                             <p className="cardsItem__portionsDescr">{portionsDescr}</p>
                         </div>
                         <div className="cardsItem__giftWrapp">
-                            <p className="cardsItem__gift">{gift !== '' ? gift : ''}</p>
+                            <div className="cardsItem__gift"> {gift === '' ? null : gift}
+                                {gift === '' ? null : `\u00A0`}
+                            </div>
                             <p className="cardsItem__giftDescr">{giftDescr}</p>
+
                         </div>
+                        <p className="cardsItem__giftDescrOptions">{giftDescrOptions} </p>
                         <img src={cat} alt="" className="cardsItem__img" />
                         <div className="cardsItem__round">
                             <div className="cardsItem__weight">{weight}</div>

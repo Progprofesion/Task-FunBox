@@ -12,7 +12,7 @@ const Cards = () => {
                 "taste": 'С фуа-гра',
                 'portions': 10,
                 'portionsDescr': 'порций',
-                'gift': null,
+                'gift': '',
                 'giftDescr': 'мышь в подарок',
                 "weight": '0,5',
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
@@ -48,7 +48,8 @@ const Cards = () => {
                 'portions': 100,
                 'portionsDescr': 'порций',
                 'gift': 5,
-                'giftDescr': 'мышей в подaрок заказчик доволен',
+                'giftDescr': 'мышей в подaрок',
+                'giftDescrOptions': 'заказчик доволен',
                 "weight": 5,
                 "hoverText": "Котэ не одобряет?",
                 "buyDescr": "Чего сидишь? Порадуй котэ,",
@@ -62,7 +63,7 @@ const Cards = () => {
 
     const render = (data) => {
         return (
-            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, weight, buy }) => {
+            data.cards.map(({ id, title, subtitle, hoverText, activeTaste, buyDescr, disBuyDescr, disabledCard, taste, portions, portionsDescr, gift, giftDescr, giftDescrOptions, weight, buy }) => {
                 return <CardsItem
                     key={id}
                     id={id}
@@ -78,6 +79,7 @@ const Cards = () => {
                     portionsDescr={portionsDescr}
                     gift={gift}
                     giftDescr={giftDescr}
+                    giftDescrOptions={giftDescrOptions}
                     weight={weight}
                     buy={buy}
                 />
