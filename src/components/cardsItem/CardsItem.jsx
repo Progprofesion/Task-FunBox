@@ -12,11 +12,8 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
 
     const { activeTogle, activeHover } = useToggles(active, setActive, setHover);
 
-
-
-
     return (
-        <div className="cardsItem">
+        <div className="cardsItem" key={id}>
             <div className="cardsItem__wrapp">
                 <div className="cardsItem__wrappCorner" onMouseLeave={() => activeHover(true)}>
                     <div className={
@@ -28,9 +25,10 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                         active ? "activeRectangle cardsItem__rectangle" : "cardsItem__rectangle"
                             &&
                             disabledCard ? "disabledRectangle cardsItem__rectangle" : "cardsItem__rectangle"
-                    } onClick={(e) => activeTogle(e, true)}> <h2 className={hover ? "activeHoverText cardsItem__subtitle" : "cardsItem__subtitle"
-                        &&
-                        disabledCard ? "disabledText cardsItem__subtitle" : "cardsItem__subtitle"
+                    } onClick={(e) => activeTogle(e, true)}> <h2 className={
+                        hover ? "activeHoverText cardsItem__subtitle" : "cardsItem__subtitle"
+                            &&
+                            disabledCard ? "disabledText cardsItem__subtitle" : "cardsItem__subtitle"
                     } >{hover ? hoverText : subtitle}</h2></div>
                 </div>
                 <div className="cardsItem__wrappCards" onMouseLeave={() => activeHover(true)}>
@@ -50,12 +48,12 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                                 {gift === '' ? null : `\u00A0`}
                             </div>
                             <p className="cardsItem__giftDescr">{giftDescr}</p>
-
                         </div>
                         <p className={disabledCard ? "disabledText cardsItem__giftDescrOptions" : "cardsItem__giftDescrOptions"}>{giftDescrOptions} </p>
                         <img src={cat} alt="cat" className={disabledCard ? "disabledImg cardsItem__img" : "cardsItem__img"} />
                         <div className={
-                            active ? "activeRound  cardsItem__round" : "cardsItem__round" &&
+                            active ? "activeRound  cardsItem__round" : "cardsItem__round"
+                                &&
                                 disabledCard ? "disabledRound cardsItem__round" : "cardsItem__round"}>
                             <div className="cardsItem__weight">{weight}</div>
                             <div className="cardsItem__kg">кг</div>
@@ -64,7 +62,8 @@ const CardsItem = ({ id, title, subtitle, hoverText, activeTaste, buyDescr, disB
                 </div>
                 <div className="cardsItem__wrappBuyDescr">
                     <p className={disabledCard ? "disabledBuyDescr cardsItem__buyDescr" : "cardsItem__buyDescr"}>{
-                        active ? activeTaste : buyDescr &&
+                        active ? activeTaste : buyDescr
+                            &&
                             disabledCard ? disBuyDescr : buyDescr
                     }</p> &nbsp;
                     <a onClick={(e) => activeTogle(e, true)} href="!#">  {
