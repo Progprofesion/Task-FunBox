@@ -1,5 +1,4 @@
 {
-  "homepage": "https://progprofesion.github.io/Task-FunBox",
   "name": "test-task-funbox",
   "version": "0.1.0",
   "private": true,
@@ -16,8 +15,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

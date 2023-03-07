@@ -12,6 +12,13 @@
           height: 49px;
           background: linear-gradient(-45deg, #F2F2F2, #F2F2F2 32px, #1698d9 0, #1698d9 37px, transparent 0);
           cursor: pointer;
+          &_active {
+               background: linear-gradient(-45deg, #F2F2F2, #F2F2F2 32px, #D91667 0, #D91667 37px, transparent 0);
+          }
+          &_disabled {
+               background: linear-gradient(-45deg, #F2F2F2, #F2F2F2 32px, #B3B3B3 0, #B3B3B3 37px, transparent 0);
+               cursor: unset;
+          }
 
    }
    &__rectangle {
@@ -21,16 +28,32 @@
           border-right: 4px solid #1698D9;
           border-top-right-radius: 12px;
           cursor: pointer;
+          &_active {
+               border-right: 4px solid #D91667;
+               border-top: 4px solid #D91667;
+          }
+          &_disabled {
+               border-top: 4px solid #B3B3B3;
+               border-right: 4px solid #B3B3B3;
+               cursor: unset;
+               pointer-events: none;
+          }
    }
    &__subtitle {
           margin-top: 20px;
           margin-left: 5px;
           font-family: 'Trebuchet MS';
-          font-style: normal;
           font-weight: 400;
           font-size: 16px;
           line-height: 19px;
           color: #666666;
+          &_hover {
+               color: #E62E7A;
+          }
+          &_disabled {
+               color: #B3B3B3;
+               opacity: 0.5;
+          }
    }
    &__card {
         position: relative;
@@ -45,43 +68,72 @@
         overflow: hidden;
         margin-top: -2px;
         cursor: pointer;
+        &_active {
+          border-right: 4px solid #D91667;
+          border-bottom:  4px solid #D91667;
+          border-left:  4px solid #D91667;
+        }
+        &_disabled {
+          border-right: 4px solid #B3B3B3;
+          border-left: 4px solid #B3B3B3;
+          border-bottom: 4px solid #B3B3B3;
+          pointer-events: none;
+        }
    }
    &__title {
         margin-left: 50px;
-        font-family: 'Trebuchet MS';
         font-weight: 700;
         font-size: 48px;
         line-height: 56px;
         color: #000000;
+        &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+        }
    }
    &__taste {
         margin-left: 50px;
-        font-family: 'Trebuchet MS';
         font-weight: 700;
         font-size: 24px;
         line-height: 28px;
         color: #000000;
+        &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+        }
    }
    &__portionsWrapp {
         display: flex;
         margin-top: 15px;
         margin-left: 50px;
-        font-family: 'Trebuchet MS';
         font-size: 14px;
         line-height: 16px;
         color: #666666;
    }
    &__portions {
         font-weight: 700;
+        &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+        }
+   }
+   &__portionsDescr {
+     &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+     }
    }
    &__giftWrapp {
         display: flex;
         width: 170px;
         margin-left: 50px;
-        font-family: 'Trebuchet MS';
         font-size: 14px;
         line-height: 16px;
         color: #666666;
+        &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+        }
    }
    &__gift {
         display: flex;
@@ -90,11 +142,25 @@
    &__giftDescr {
         width: 170px;
         font-weight: 100;
-        float: left
+        float: left;
+   }
+   &__giftDescrOptions {
+          margin-left: 50px;
+          font-size: 14px;
+          line-height: 16px;
+          color: #666666;    
+          &_disabled {
+               color: #B3B3B3;
+               opacity: 0.5;
+             } 
    }
    &__img {
         margin-top: 35px;
         margin-left: -25px;
+        &_disabled {
+          color: #B3B3B3;
+          opacity: 0.5;
+        }
    }
    &__round {
         position: absolute;
@@ -104,12 +170,16 @@
         right: 15px;
         border-radius: 100%;
         background: #1698D9;
+        &_active {
+          background: #E52E7A;
+        }
+        &_disabled {
+          background: #B3B3B3;
+        }
    }
    &__weight {
         margin-top: 20px;
         text-align: center;
-        font-family: 'Trebuchet MS';
-        font-style: normal;
         font-weight: 400;
         font-size: 42px;
         line-height: 22px;
@@ -118,8 +188,6 @@
    &__kg {
         margin-top: 8px;
         text-align: center;
-        font-family: 'Trebuchet MS';
-        font-style: normal;
         font-weight: 400;
         font-size: 22px;
         line-height: 22px;
@@ -130,8 +198,6 @@
         margin-bottom: 50px;
         display: flex;
         justify-content: center;
-        font-family: 'Trebuchet MS';
-        font-style: normal;
         font-weight: 400;
         font-size: 13px;
         line-height: 15px;
@@ -142,12 +208,10 @@
         text-decoration: none;
         border-bottom: 1px dashed rgba(22, 152, 217, 1);
    }
-   &__giftDescrOptions {
-     margin-left: 50px;
-     font-family: 'Trebuchet MS';
-     font-size: 14px;
-     line-height: 16px;
-     color: #666666;
+   &__buyDescr {
+     &_disabled {
+          color: #FFFF66;
+     }
    }
 }
 
@@ -155,27 +219,10 @@
 
 // Selected 
 
-.activeRectangle {
-     border-right: 4px solid #D91667;
-     border-top: 4px solid #D91667;
-}
-
-.activeCorner {
-     background: linear-gradient(-45deg, #F2F2F2, #F2F2F2 32px, #D91667 0, #D91667 37px, transparent 0);
-}
-
 .activeCard {
     border-right: 4px solid #D91667;
     border-bottom:  4px solid #D91667;
     border-left:  4px solid #D91667;
-}
-
-.activeRound {
-    background: #E52E7A;
-}
-
-.activeHoverText {
-    color: #E62E7A;
 }
 
 
@@ -186,31 +233,8 @@
      cursor: unset;
 }
 
-.disabledRectangle {
-     border-top: 4px solid #B3B3B3;
-     border-right: 4px solid #B3B3B3;
-     cursor: unset;
-     pointer-events: none;
-}
-
-.disabledWrapp {
-     border-right: 4px solid #B3B3B3;
-     border-left: 4px solid #B3B3B3;
-     border-bottom: 4px solid #B3B3B3;
-     pointer-events: none;
-}
-
-.disabledText {
-    color: #B3B3B3;
-    opacity: 0.5;
-}
-
 .disabledRound {
     background: #B3B3B3;
-}
-
-.disabledBuyDescr {
-    color: #FFFF66;
 }
 
 .disabledImg {
