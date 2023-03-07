@@ -1,5 +1,5 @@
 Test-Task-FunBox
 
-## install
+## Installing
 
-npm i , npm start
+`npm i`  `npm start`
